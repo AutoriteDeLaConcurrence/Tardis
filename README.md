@@ -8,9 +8,11 @@ Such a resource could improve analysts’ ability to locate decisions related to
 
 ## Data
 
-A l'heure actuelle, contient les données des autorités suivantes :
+As of now, it contains data from the following authorities:
 
-- Autorité de la concurrence (France)
-- Autorité de la concurrence de nouvelle calédonie (New Caledonia)
-- Competition COmmission (Switzerland)
+  - French Competition Authority (France) : available on data.gouv.fr => https://www.data.gouv.fr/datasets/decisions-publiees-par-lautorite-de-la-concurrence-depuis-1988
+
+  - Competition Authority of New Caledonia (New Caledonia)
+
+  - Competition Commission (Switzerland)
 
