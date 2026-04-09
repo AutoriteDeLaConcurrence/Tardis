@@ -10,9 +10,8 @@ Such a resource could improve analysts’ ability to locate decisions related to
 
 As of now, it contains data from the following authorities:
 
-  - French Competition Authority (France) : available on data.gouv.fr => https://www.data.gouv.fr/datasets/decisions-publiees-par-lautorite-de-la-concurrence-depuis-1988
+- French Competition Authority (France) : available on data.gouv.fr => https://www.data.gouv.fr/datasets/decisions-publiees-par-lautorite-de-la-concurrence-depuis-1988
 
-  - Competition Authority of New Caledonia (New Caledonia)
+- Competition Authority of New Caledonia (New Caledonia) : available on https://data.gouv.nc => https://data.gouv.nc/explore/dataset/decisions-publiees-par-l-autorite-de-la-concurrence/
 
-  - Competition Commission (Switzerland)
-
+- Competition Commission (Switzerland)
