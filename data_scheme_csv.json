@@ -1,0 +1,81 @@
+{
+  "$schema": "https://specs.frictionlessdata.io/schemas/table-schema.json",
+  "title": "Publications from competition authorities",
+  "description": "Dataset containing metadata of decisions and publications issued by competition authorities. Each record represents a single publication (decision, opinion, press release, etc.) from a national or international competition authority. Full text is available in the companion JSON dataset.",
+  "fields": [
+    {
+      "name": "id",
+      "title": "Internal identifier",
+      "type": "integer",
+      "constraints": {
+        "required": true,
+        "unique": true
+      },
+      "description": "Internal unique identifier of the record, as an integer. Assigned by the dataset producer and stable across updates."
+    },
+    {
+      "name": "case_number",
+      "title": "Case number",
+      "type": "string",
+      "constraints": {
+        "required": true,
+        "unique": true
+      },
+      "description": "Official reference number of the decision as assigned by the competition authority (e.g. '22-D-15' for a French Autorité de la concurrence decision). Unique within the dataset."
+    },
+    {
+      "name": "case_title",
+      "title": "Case title",
+      "type": "string",
+      "constraints": {
+        "required": false
+      },
+      "description": "Official title of the decision or publication, as published by the authority. May include the names of the companies or sectors involved."
+    },
+    {
+      "name": "case_date_publication",
+      "title": "Publication date",
+      "type": "date",
+      "format": "%Y-%m-%d",
+      "constraints": {
+        "required": false
+      },
+      "description": "Date on which the decision was officially published by the authority, in ISO 8601 format (YYYY-MM-DD). Distinct from the decision date, which may be earlier."
+    },
+    {
+      "name": "case_sectors",
+      "title": "Sectors",
+      "type": "array",
+      "arrayItem": {
+        "type": "string"
+      },
+      "constraints": {
+        "required": false
+      },
+      "description": "Economic sector(s) concerned by the decision. Multiple values are separated by a semicolon (e.g. 'energy;distribution'). A single sector is stored as a plain string."
+    },
+    {
+      "name": "case_companies",
+      "title": "Companies",
+      "type": "array",
+      "arrayItem": {
+        "type": "string"
+      },
+      "constraints": {
+        "required": false
+      },
+      "description": "Company or companies involved as a party in the case. Multiple values are separated by a semicolon. Names should match the official legal entity name where possible."
+    },
+    {
+      "name": "case_source_url",
+      "title": "Source URL",
+      "type": "string",
+      "format": "uri",
+      "constraints": {
+        "required": false
+      },
+      "description": "Permanent URL of the page on the authority's website where the decision is published. Should point to the official source, not an aggregator or mirror."
+    }
+  ],
+  "primaryKey": ["id"]
+}

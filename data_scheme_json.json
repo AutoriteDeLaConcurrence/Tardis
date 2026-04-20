@@ -1,0 +1,64 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Publications from competition authorities",
+  "description": "Dataset containing the full text of decisions and publications issued by competition authorities. Each record represents a single publication (decision, opinion, press release, etc.) from a national or international competition authority.",
+  "type": "object",
+  "required": ["id", "case_number"],
+  "properties": {
+    "id": {
+      "type": "integer",
+      "description": "Internal unique identifier of the record, as an integer. Assigned by the dataset producer and stable across updates."
+    },
+    "case_number": {
+      "type": "string",
+      "description": "Official reference number of the decision as assigned by the competition authority (e.g. '22-D-15' for a French Autorité de la concurrence decision). Unique within the dataset."
+    },
+    "case_title": {
+      "type": "string",
+      "description": "Official title of the decision or publication, as published by the authority. May include the names of the companies or sectors involved."
+    },
+    "case_date_publication": {
+      "type": "string",
+      "format": "date",
+      "description": "Date on which the decision was officially published by the authority, in ISO 8601 format (YYYY-MM-DD)."
+    },
+    "case_sectors": {
+      "description": "Economic sector(s) concerned by the decision, as a single string or an array of strings when multiple sectors are involved (e.g. 'retail', ['energy', 'distribution']).",
+      "oneOf": [
+        {
+          "type": "string",
+          "description": "A single sector as a string."
+        },
+        {
+          "type": "array",
+          "items": { "type": "string" },
+          "description": "Multiple sectors as an array of strings."
+        }
+      ]
+    },
+    "case_companies": {
+      "description": "Company or companies involved as a party in the case, as a single string or an array of strings when multiple companies are involved. Names should match the official legal entity name where possible.",
+      "oneOf": [
+        {
+          "type": "string",
+          "description": "A single company name as a string."
+        },
+        {
+          "type": "array",
+          "items": { "type": "string" },
+          "description": "Multiple company names as an array of strings."
+        }
+      ]
+    },
+    "case_source_url": {
+      "type": "string",
+      "format": "uri",
+      "description": "Permanent URL of the page on the authority's website where the decision is published. Should point to the official source, not an aggregator or mirror."
+    },
+    "case_full_text": {
+      "type": "string",
+      "contentMediaType": "text/plain",
+      "description": "Full plain text of the published decision, as extracted from the official source. May include headings, numbered paragraphs and legal references. HTML tags and PDF artefacts should be stripped before ingestion."
+    }
+  }
+}
